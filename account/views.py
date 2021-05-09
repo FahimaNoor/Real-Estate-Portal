@@ -6,15 +6,13 @@ from django.contrib.auth import logout as logouts
 
 def register(request):
 	"""
-    This method is used to show the selection page of see available ICU and see available hospital bed.
-    by clicking one of the option it shows the corresponding page.
+    This method is used to show the registration form.
     
     :param request: it's a HttpResponse from user.
     
     :type request: HttpResponse.
     
-    :return: this method returns a html page.It returns a page where it has two options.one is see available
-    ICU and see available hospital base pages.
+    :return: this method returns a html page. It returns a page where the user has to fill up the form to create account.
     
     :rtype: HttpResponse.
     """
@@ -30,8 +28,7 @@ def register(request):
 
 def login(request):
 	"""
-    This method is used to show the selection page of see available ICU and see available hospital bed.
-    by clicking one of the option it shows the corresponding page.
+    This method is used to show the login form to the user.
     
     :param request: it's a HttpResponse from user.
     
@@ -57,7 +54,7 @@ def logout(request):
     
     :type request: HttpResponse.
     
-    :return: this method returns a html page.It returns the logout html
+    :return: this method returns a html page. It returns the logout html
     
     :rtype: HttpResponse.
     """
