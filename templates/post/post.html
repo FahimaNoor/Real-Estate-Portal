@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href={% static 'css/animsition.min.css' %}>
+    <link rel="stylesheet" type="text/css" href={% static 'css/login.css' %}>
+
+    <div class="container py-5 wrap-post p-l-55 p-r-55 p-t-65 p-b-54"
+         style="margin-left: 32%; position: absolute">
+        <h2 class="post-h2"> Enter Post Details </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="wrap-input100 validate-input m-b-23" data-validate="Header is required">
+                {{ post_form.post_header|as_crispy_field }}
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Phone is required">
+                {{ post_form.phone|as_crispy_field }}
+            </div>
+            <div class="wrap-input100 validate-input m-b-23" data-validate="Required">
+                {{ post_form.apartment_id|as_crispy_field }}
+            </div>
+            <div class="wrap-input100 validate-input m-b-23" data-validate="Required">
+                {{ post_form.is_sell_post|as_crispy_field }}
+            </div>
+
+            <br>
+
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button class="login100-form-btn">
+                        Post Apartment
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
